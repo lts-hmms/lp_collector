@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeName,changeCost } from "../store";
+import { changeName,changeCost, addLp } from "../store";
 
 function LpForm() {
     const dispatch = useDispatch();
@@ -16,12 +16,16 @@ function LpForm() {
     const handleCostChange = (event) => {
         const lpCost = parseInt(event.target.value) || 0;
         dispatch(changeCost(lpCost)); 
+    };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch(addLp({ name, cost }))
     }
 
     return (
     <div className="lp-form panel">
         <h4 className="subtitle is-3">Add LP</h4>
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="field-group">
                 <div className="field">
                     <label className="label">Name</label>
@@ -38,8 +42,9 @@ function LpForm() {
                     type="number"
                     />
                 </div>
-                
-
+            <div className="field">
+                <button className="button is-link">Submit</button>
+            </div>
             </div>
         </form>
     </div>
