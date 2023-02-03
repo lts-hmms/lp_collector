@@ -10,6 +10,7 @@ const store = configureStore({
 });
 
 export {
+    // store and action creators
     store, changeName, changeCost, addLp, removeLp, changeSearchTerm
 };
 
