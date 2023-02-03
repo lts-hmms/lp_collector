@@ -4,11 +4,13 @@ import LpSearch from "./components/Lp_Search";
 import LpValue from "./components/Lp_Value";
 
 function App() {
-return <div>
-    <LpForm />
-    <LpList />
-    <LpSearch />
-    <LpValue />
-</div>;
+return (
+        <div className="container is-fluid">
+            <LpForm />
+            <LpSearch />
+            <LpList />
+            <LpValue />
+        </div>
+    )
 }
 export default App;

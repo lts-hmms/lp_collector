@@ -1,0 +1,79 @@
+.lp-form {
+  margin-top: 15px;
+  padding: 15px;
+}
+.lp-form .field-group {
+  display: flex;
+  margin-bottom: 0px;
+}
+.lp-form form {
+  display: flex;
+  justify-content: space-between;
+}
+.lp-form .field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0px;
+  margin-right: 10px;
+}
+.lp-form .field label.label {
+  margin-bottom: 0px;
+  width: 70px;
+}
+.lp-form input {
+  width: 100%;
+}
+.lp-form h4.subtitle.is-3 {
+  margin-bottom: 0.75rem;
+}
+
+.lp-list .panel.bold {
+  font-weight: 600;
+}
+
+.lp-list .panel {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lp-list p {
+  font-size: 1.5rem;
+}
+
+.lp-list .note {
+  font-style: italic;
+  display: block;
+  margin: 40px 20px;
+}
+
+.lp-value {
+  font-size: 2rem;
+  text-align: right;
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+.list-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-header h3.title {
+  margin-bottom: 0px;
+}
+
+.list-header .search {
+  display: flex;
+  align-items: center;
+}
+.list-header .search .label {
+  margin-bottom: 0px;
+  margin-right: 10px;
+}

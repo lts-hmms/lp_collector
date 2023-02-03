@@ -23,31 +23,31 @@ function LpForm() {
     }
 
     return (
-    <div className="lp-form panel">
-        <h4 className="subtitle is-3">Add LP</h4>
-        <form onSubmit={handleSubmit}>
-            <div className="field-group">
-                <div className="field">
-                    <label className="label">Name</label>
-                    <input className="input is-expanded"
-                    value={name}
-                    onChange={handleNameChange}
-                    />
+        <div className="lp-form panel">
+            <h4 className="subtitle is-3">Add LP</h4>
+            <form onSubmit={handleSubmit}>
+                <div className="field-group">
+                    <div className="field">
+                        <label className="label">Name</label>
+                        <input className="input is-expanded"
+                        value={name}
+                        onChange={handleNameChange}
+                        />
+                    </div>
+                    <div className="field">
+                        <label className="label">Cost</label>
+                        <input className="input is-expanded"
+                        value={cost || ''}
+                        onChange={handleCostChange}
+                        type="number"
+                        />
+                    </div>
                 </div>
                 <div className="field">
-                    <label className="label">Cost</label>
-                    <input className="input is-expanded"
-                    value={cost || ''}
-                    onChange={handleCostChange}
-                    type="number"
-                    />
+                    <button className="button is-link">Submit</button>
                 </div>
-            <div className="field">
-                <button className="button is-link">Submit</button>
-            </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
     );
 }
 
