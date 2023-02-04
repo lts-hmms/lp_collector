@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { addLp } from './lpListSlice';
 
 const lpCreationSlice = createSlice({
     name: 'lpCreation',
@@ -12,8 +13,14 @@ const lpCreationSlice = createSlice({
         },
         changeCost(state,action) {
             state.cost = action.payload;
-        }
-    }
+        },
+    },
+    extraReducers(builder) {
+        builder.addCase(addLp, (state, action) => {
+            state.name = '';
+            state.cost = 0
+        });
+    },
 });
 
 export const { changeName, changeCost } = lpCreationSlice.actions;
