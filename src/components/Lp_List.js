@@ -3,8 +3,14 @@ import { removeLp } from "../store";
 
 function LpList(){
     const dispatch = useDispatch();
-    const lps = useSelector(({ lps: { items, searchTerm } }) => {
-        return items.filter((lp) => lp.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    // a good place for derived state is in useSelector functions
+    const { lps, name } = useSelector(({ creation, lps: { items, searchTerm } }) => {
+        const filteredLps = items.filter((lp) => lp.name.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+        return {
+            lps: filteredLps,
+            name: creation.name
+        }
     });
 
     const handleLpDelete = (lp) => {
@@ -12,8 +18,9 @@ function LpList(){
     }
 
     const rederedLps = lps.map((lp) => {
+        const bold = name && lp.name.toLowerCase().includes(name.toLowerCase());
         return (
-            <div key={lp.id} className="panel">
+            <div key={lp.id} className={`panel ${bold && 'bold'}`}>
                 <p>
                     {lp.name} - ${lp.cost}
                 </p>
