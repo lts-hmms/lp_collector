@@ -3,8 +3,8 @@ import { removeLp } from "../store";
 
 function LpList(){
     const dispatch = useDispatch();
-    const lps = useSelector((state) =>{
-        return state.lps.items;
+    const lps = useSelector(({ lps: { items, searchTerm } }) => {
+        return items.filter((lp) => lp.name.toLowerCase().includes(searchTerm.toLowerCase()))
     });
 
     const handleLpDelete = (lp) => {
